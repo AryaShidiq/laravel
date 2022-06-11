@@ -1,0 +1,30 @@
+UJI LEVEL
+
+Soal
+Aplikasi agenda pelajaran guru
+ 
+3 tabel
+tabel guru
+tabel kelas
+tabel agennda
+
+tabel guru:
+username dan password
+nama guru
+NIK guru
+mata pelajaran
+
+tabel kelas :
+nama kelas
+wali kelas
+
+tabel/data agenda :
+nama guru
+mata pelajaran
+materi pelajaran
+jam pelajaran dari sampai dengan
+siswa yang tidak hadir(absensi)
+kelas
+jenis pembelaran off/on (link pembelajaran jika on)
+dokumentasi
+keterangan  
