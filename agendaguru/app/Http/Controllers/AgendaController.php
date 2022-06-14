@@ -3,27 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\Guru;
 use App\Models\Kelas;
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
 {
     public function indexagenda()
     {
-        $agenda = Agenda::with('kelas')->paginate(10);
+        $agenda = Agenda::with('kelas','guru','mapel')->paginate(10);
         return view('agenda.home', compact('agenda'));
     }
     public function crtagenda()
     {
         $kelas = Kelas::all(); 
-        return view('agenda.create', compact('kelas'));
+        $guru = Guru::all();
+        $mapel = Mapel::all();
+        return view('agenda.create', compact('kelas','guru','mapel'));
     }
     public function stragenda(Request $request)
     {   
         $this->validate($request,[
-            'namaguru' => 'required',
+            'guru_id' => 'required',
             'kelas_id' => 'required',
-            'mapel' => 'required',
+            'mapel_id' => 'required',
             'matpel' => 'required',
             'tanggal' => 'required',
             'mulai' => 'required',
@@ -46,7 +50,9 @@ class AgendaController extends Controller
     {
         $agenda = Agenda::find($id);
         $kelas = Kelas::all(); 
-        return view('agenda.edit', compact('agenda','kelas'));
+        $guru = Guru::all();
+        $mapel = Mapel::all();
+        return view('agenda.edit', compact('agenda','kelas','guru','mapel'));
     }
     public function updateagenda(Request $request,$id)
     {

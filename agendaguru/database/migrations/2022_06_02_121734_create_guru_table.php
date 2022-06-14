@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('nik')->unique();
             $table->string('namaguru',20);
-            $table->enum('mapel',['rpl','mm','tkj','bc','tei']);
+            $table->foreignId('mapel_id');
+            // $table->enum('mapel',['rpl','mm','tkj','bc','tei']);
             $table->string('userguru');
             $table->string('passguru');
             $table->timestamps();

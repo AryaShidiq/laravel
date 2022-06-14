@@ -38,7 +38,7 @@
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                     <div class="d-block px-2 py-1">
-                                    {{$g->mapel}}
+                                    {{$g->mapel->matapelajaran}}
                                     </div>
                                 </td>
                                 <td class="align-middle text-center">

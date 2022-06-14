@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Agenda;
+use App\Models\Mapel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,8 @@ Route::group(['middleware'=>['auth','hakakses:admin']],function(){
     $jumlahagenda = Agenda::count();
     $jumlahguru = Guru::count();
     $jumlahkelas = Kelas::count();
-    return view('index' ,compact('jumlahagenda','jumlahguru','jumlahkelas'));
+    $jumlahmapel = Mapel::count();
+    return view('index' ,compact('jumlahagenda','jumlahguru','jumlahkelas','jumlahmapel'));
     });
     // tabel guru
     Route::get('/guru',[GuruController::class,'indexguru'])->middleware('auth');

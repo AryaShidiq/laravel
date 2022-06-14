@@ -22,18 +22,18 @@
                 @csrf
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">MAPEL</label>
-                <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="mapel" style="width: 100%;">
-                @error('mapel')
+                <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="matapelajaran" style="width: 100%;">
+                @error('matapelajaran')
                 <div class="text-danger">
                   {{$message}}
                 </div>
                 @enderror
               </div>
-              <button type="submit" class="btn btn-primary" name="submit" value="save">Submit</button>
-            </form>
-              </div>
               <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" name="submit" value="save">Submit</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </form>
               </div>
             </div>
           </div>
@@ -64,12 +64,12 @@
                                 </td> -->
                                 <td>
                                     <div class="d-block px-2 py-1">
-                                    {{$m->mapel}}
+                                    {{$m->matapelajaran}}
                                     </div>
                                 </td>
                                 <td class="align-items-center d-flex">
                                     
-                                    <a href="/ubahmapel/{{$m->id}}" class="btn btn-warning me-2"edata-toggle="tooltip" data-original-title="Edit user">Edit</a>
+                                  <a href="/editmapel/{{$m->id}}" class="btn btn-warning me-2"edata-toggle="tooltip" data-original-title="Edit user">Edit</a>
                                     <form action="/deletemapel/{{$m->id}}" method="POST">
                                         @csrf
                                         @method('delete')

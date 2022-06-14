@@ -4,15 +4,17 @@
     <div class="col-10 d-flex justify-content-center">
         <form method="POST" action="/storeagenda" enctype="multipart/form-data">
             @csrf
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nama Guru </label>
-                <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaguru" style="width: 100%;">
-                @error('namaguru')
+            <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="guru_id" id="guru_id" style="width: 100%;">
+                <option selected>Pilih Nama Guru</option>
+                @foreach  ($guru as $g)
+                <option value="{{$g->id}}">{{$g->namaguru}}</option>
+                @endforeach
+                @error('guru_id')
                 <div class="text-danger">
-                {{$message}}
+                    {{$message}}
                 </div>
                 @enderror
-            </div>
+            </select>
             <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="kelas_id" id="kelas_id" style="width: 100%;">
                 <option selected>Pilih Kelas</option>
                 @foreach  ($kelas as $k)
@@ -24,13 +26,16 @@
                 </div>
                 @enderror
             </select>
-            <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel" style="width: 100%;">
+            <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel_id" id="mapel_id" style="width: 100%;">
                 <option selected>Pilih Mata Pelajaran</option>
-                <option value="rpl">RPL</option>
-                <option value="mm">Multimedia</option>
-                <option value="tkj">TKJ</option>
-                <option value="bc">Broadcast</option>
-                <option value="tei">TEI</option>
+                @foreach  ($mapel as $m)
+                <option value="{{$m->id}}">{{$m->matapelajaran}}</option>
+                @endforeach
+                @error('mapel_id')
+                <div class="text-danger">
+                    {{$message}}
+                </div>
+                @enderror
             </select>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Materi Pembelajaran</label>

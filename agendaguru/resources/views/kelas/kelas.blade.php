@@ -16,7 +16,7 @@
                         <thead>
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Kelas</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">NAMA Walikelas</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Wali Kelas</th>
                                 <th class="text-secondary opacity-7"></th>
                              </tr>
                         </thead>
@@ -30,7 +30,7 @@
                                 </td>
                                 <td>
                                     <div class="d-block px-2 py-1">
-                                    {{$k->walas}}
+                                    {{$k->guru->namaguru}}
                                     </div>
                                 </td>
                                 <td class="align-items-center d-flex">

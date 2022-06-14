@@ -19,12 +19,12 @@ class MapelController extends Controller
     public function strmapel(Request $request)
     {
         $this->validate($request,[
-            'mapel' => 'required',
+            'matapelajaran' => 'required',
         ]);
         mapel::create($request->all());
         return redirect('/mapel');
     } 
-    public function ubahmapel($id)
+    public function editmapel($id)
     {
         $mapel = Mapel::find($id);
         return view('mapel.edit', compact('mapel'));

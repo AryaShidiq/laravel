@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
-            $table->string('namaguru');
+            // $table->string('namaguru');
+            $table->foreignId('guru_id')->constrained('guru');
             $table->foreignId('kelas_id')->constrained('kelas');
             // $table->string('namakelas');         
-            $table->enum('mapel',['rpl','mm','tkj','bc','tei']);
+            // $table->enum('mapel',['rpl','mm','tkj','bc','tei']);
+            $table->foreignId('mapel_id');
             $table->string('matpel');
             $table->date('tanggal');
             $table->time('mulai');

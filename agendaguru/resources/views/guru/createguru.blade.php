@@ -23,14 +23,17 @@
         </div>
         @enderror
       </div>
-      <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel" style="width: 100%;">
-        <option selected>Pilih Mata Pelajaran</option>
-        <option value="rpl">RPL</option>
-      <option value="mm">Multimedia</option>
-        <option value="tkj">TKJ</option>
-        <option value="bc">Broadcast</option>
-        <option value="tei">TEI</option>
-    </select>
+      <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel_id" id="mapel_id" style="width: 100%;">
+          <option selected>Pilih Mapel</option>
+          @foreach  ($mapel as $m)
+          <option value="{{$m->id}}">{{$m->matapelajaran}}</option>
+          @endforeach
+          @error('mapel_id')
+          <div class="text-danger">
+              {{$message}}
+          </div>
+          @enderror
+      </select>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username Guru</label>
         <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="userguru" style="width: 100%;">
