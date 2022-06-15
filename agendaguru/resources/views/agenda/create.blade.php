@@ -1,8 +1,9 @@
 @extends('layout.admin')
 
 @section('content')
-    <div class="col-10 d-flex justify-content-center">
-        <form method="POST" action="/storeagenda" enctype="multipart/form-data">
+    <div class="col-10 d-flex flex-column justify-content-center ">
+        <h1 class="text-center pb-4">FORM AGENDA</h1>
+        <form method="POST" action="/storeagenda" enctype="multipart/form-data" class="m-auto">
             @csrf
             <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="guru_id" id="guru_id" style="width: 100%;">
                 <option selected>Pilih Nama Guru</option>

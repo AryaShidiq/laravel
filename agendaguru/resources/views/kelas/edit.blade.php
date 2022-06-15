@@ -11,7 +11,6 @@
         <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="namakelas" style="width: 100%;" value="{{$kelas->namakelas}}">
     </div>
     <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="kelas_id" id="kelas_id" style="width: 100%;">
-        <option selected>Nama Guru</option>
         @foreach  ($guru as $g)
         <option value="{{$g->id}}">{{$g->namaguru}}</option>
         @endforeach
@@ -20,4 +19,4 @@
     </form>
 </div>
 
-@endsection
+@endsection 

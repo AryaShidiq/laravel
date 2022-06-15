@@ -7,7 +7,6 @@
         @method('put')
         @csrf
         <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="guru_id" id="guru_id" style="width: 100%;">
-                <option selected>Pilih Nama Guru</option>
                 @foreach  ($guru as $g)
                 <option value="{{$g->id}}">{{$g->namaguru}}</option>
                 @endforeach
@@ -18,13 +17,11 @@
                 @enderror
         </select>
         <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="kelas_id" id="kelas_id" style="width: 100%;">
-            <option selected>Pilih Kelas</option>
             @foreach  ($kelas as $k)
             <option value="{{$k->id}}">{{$k->namakelas}}</option>
             @endforeach
         </select>
         <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel_id" id="mapel_id" style="width: 100%;">
-            <option selected>Pilih Mata Pelajaran</option>
             @foreach  ($mapel as $m)
             <option value="{{$m->id}}">{{$m->matapelajaran}}</option>
             @endforeach

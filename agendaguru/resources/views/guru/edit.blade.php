@@ -2,7 +2,7 @@
 
 @section('content') 
 
-<div class="col-8 d-flex">
+<div class="col-10 d-flex justify-content-center">
     <form method="POST" action="/updateguru/{{$guru->id}}">
         @method('put')
         @csrf
@@ -14,8 +14,7 @@
         <label for="exampleInputEmail1" class="form-label">NAMA GURU</label>
         <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" name="namaguru" value="{{$guru->namaguru}}">
       </div>
-      <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel_id" id="mapel_id" style="width: 100%;">
-          <option selected>Pilih Mapel</option>
+      <select class="form-select form-select-lg mb-3 border border-primary" aria-label="form-select-lg example" name="mapel_id" id="mapel" style="width: 100%;">
           @foreach  ($mapel as $m)
           <option value="{{$m->id}}">{{$m->matapelajaran}}</option>
           @endforeach

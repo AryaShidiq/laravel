@@ -2,8 +2,9 @@
 
 @section('content')
 
-<div class="col-10 d-flex justify-content-center">
-    <form method="POST" action="/storeguru">
+<div class="col-10 d-flex flex-column justify-content-center">
+    <h1 class="text-center">FORM GURU</h1>
+    <form method="POST" action="/storeguru" class="m-auto">
         @csrf
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">NIK GURU</label>
