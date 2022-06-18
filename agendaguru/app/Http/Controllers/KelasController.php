@@ -10,7 +10,8 @@ class KelasController extends Controller
 {
     public function indexkelas()
     {
-        $kelas = Kelas::with('guru')->paginate(10);
+        $kelas = Kelas::all();
+        // $kelas = Kelas::with('guru')->paginate(10);
         return view('kelas.kelas', compact('kelas'));
     }
     public function crtkelas()

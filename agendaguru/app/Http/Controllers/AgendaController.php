@@ -12,7 +12,8 @@ class AgendaController extends Controller
 {
     public function indexagenda()
     {
-        $agenda = Agenda::with('kelas','guru','mapel')->paginate(10);
+        $agenda = Agenda::all();
+        // $agenda = Agenda::with('kelas','guru','mapel')->paginate(10);
         return view('agenda.home', compact('agenda'));
     }
     public function crtagenda()

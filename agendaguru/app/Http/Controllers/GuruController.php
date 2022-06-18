@@ -11,7 +11,8 @@ class GuruController extends Controller
 {
     public function indexguru()
     {
-        $guru = Guru::with('mapel')->paginate(10);
+        $guru = Guru::all();
+        // $guru = Guru::with('mapel')->paginate(10);
         return view('guru.home', compact('guru'));
     }
     public function crtguru()
